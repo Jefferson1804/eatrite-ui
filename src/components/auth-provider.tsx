@@ -1,16 +1,28 @@
 'use client'
 
 import { createContext, useContext, useEffect, useState } from 'react'
-import { User, AuthError, AuthResponse } from '@supabase/supabase-js'
+import { User, AuthError } from '@supabase/supabase-js'
 import { createClient } from '@/lib/supabase'
+
+interface UserProfile {
+  full_name?: string
+  username?: string
+  date_of_birth?: string
+  height_cm?: number
+  weight_kg?: number
+  activity_level?: string
+  dietary_preferences?: string[]
+  allergies?: string[]
+  goals?: string[]
+}
 
 interface AuthContextType {
   user: User | null
   loading: boolean
-  signIn: (email: string, password: string) => Promise<{ data: any; error: AuthError | null }>
-  signUp: (email: string, password: string) => Promise<{ data: any; error: AuthError | null }>
+  signIn: (email: string, password: string) => Promise<{ data: unknown; error: AuthError | null }>
+  signUp: (email: string, password: string, profile?: UserProfile) => Promise<{ data: unknown; error: AuthError | null }>
   signOut: () => Promise<{ error: AuthError | null }>
-  resetPassword: (email: string) => Promise<{ data: any; error: AuthError | null }>
+  resetPassword: (email: string) => Promise<{ data: unknown; error: AuthError | null }>
 }
 
 const AuthContext = createContext<AuthContextType | undefined>(undefined)
@@ -49,10 +61,23 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
     return { data, error }
   }
 
-  const signUp = async (email: string, password: string) => {
+  const signUp = async (email: string, password: string, profile?: UserProfile) => {
     const { data, error } = await supabase.auth.signUp({
       email,
       password,
+      options: {
+        data: {
+          full_name: profile?.full_name,
+          username: profile?.username,
+          date_of_birth: profile?.date_of_birth,
+          height_cm: profile?.height_cm,
+          weight_kg: profile?.weight_kg,
+          activity_level: profile?.activity_level,
+          dietary_preferences: profile?.dietary_preferences,
+          allergies: profile?.allergies,
+          goals: profile?.goals,
+        }
+      }
     })
     return { data, error }
   }

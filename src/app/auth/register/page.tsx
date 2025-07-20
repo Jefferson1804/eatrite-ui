@@ -22,13 +22,17 @@ export default function RegisterPage() {
         </div>
       </div>
       <div className="bg-muted relative hidden lg:block">
-        <Image
-          src="/images/login-bg.jpg"
-          width={1000}
-          height={1000}
-          alt="Image"
-          className="absolute inset-0 h-full w-full object-cover dark:brightness-[0.2] dark:grayscale"
-        />
+        <div className="absolute inset-0 h-full w-full bg-gradient-to-br from-primary/10 to-primary/5 flex items-center justify-center">
+          <div className="text-center space-y-4">
+            <div className="bg-primary text-primary-foreground flex size-16 items-center justify-center rounded-full mx-auto">
+              <GalleryVerticalEnd className="size-8" />
+            </div>
+            <div className="space-y-2">
+              <h2 className="text-2xl font-bold">Welcome to EatRite</h2>
+              <p className="text-muted-foreground">Your personal recipe companion</p>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   )

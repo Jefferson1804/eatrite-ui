@@ -31,11 +31,6 @@ import {
 
 // EatRite app navigation data
 const data = {
-  user: {
-    name: "EatRite User",
-    email: "user@eatrite.com",
-    avatar: "/avatars/user.jpg",
-  },
   teams: [
     {
       name: "EatRite",
@@ -133,7 +128,7 @@ export function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
         <NavProjects projects={data.projects} currentPath={pathname} />
       </SidebarContent>
       <SidebarFooter>
-        <NavUser user={data.user} />
+        <NavUser />
       </SidebarFooter>
       <SidebarRail />
     </Sidebar>
