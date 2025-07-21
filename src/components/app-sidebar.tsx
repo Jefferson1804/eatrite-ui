@@ -51,21 +51,6 @@ const data = {
       icon: ChefHat,
     },
     {
-      title: "All Recipes",
-      url: "/recipes/all",
-      icon: BookOpen,
-    },
-    {
-      title: "Recommended",
-      url: "/recipes/recommended",
-      icon: Star,
-    },
-    {
-      title: "Categories",
-      url: "/recipes/categories",
-      icon: FolderOpen,
-    },
-    {
       title: "My Ingredients",
       url: "/ingredients",
       icon: ShoppingBasket,
