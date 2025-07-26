@@ -62,13 +62,8 @@ const data = {
     },
     {
       title: "Meal Plan",
-      url: "/meal-plan",
+      url: "/recipes/meal-plan",
       icon: Calendar,
-    },
-    {
-      title: "Profile",
-      url: "/profile",
-      icon: User,
     },
     {
       title: "Settings",
