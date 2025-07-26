@@ -66,11 +66,6 @@ const data = {
       icon: Calendar,
     },
     {
-      title: "Profile",
-      url: "/profile",
-      icon: User,
-    },
-    {
       title: "Settings",
       url: "/settings",
       icon: Settings,

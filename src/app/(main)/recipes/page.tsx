@@ -200,8 +200,8 @@ export default function EatRiteRecipeInput() {
 
     try {
       // For development, use MockAIService. In production, use createAIService with your API key
-      const aiService = new MockAIService()
-      // const aiService = createAIService('your-openai-api-key-here')
+      //const aiService = new MockAIService()
+       const aiService = createAIService(process.env.NEXT_PUBLIC_OPENAI_API_KEY || '')
 
       const validIngredients = ingredients.filter((ing) => ing.name && ing.quantity)
       

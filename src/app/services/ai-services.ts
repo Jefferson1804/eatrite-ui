@@ -346,7 +346,7 @@ Respond with a JSON object in this exact format:
           'Authorization': `Bearer ${this.apiKey}`,
         },
         body: JSON.stringify({
-          model: 'gpt-3.5-turbo',
+          model: 'gpt-4.1',
           messages: [
             {
               role: 'system',
