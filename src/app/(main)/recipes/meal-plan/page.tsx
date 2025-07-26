@@ -501,7 +501,7 @@ export default function MealPlanPage() {
   }
 
   return (
-    <div className="container mx-auto py-8 space-y-8">
+    <div className="container mx-auto px-2 py-8 space-y-8">
       {/* Header */}
       <div className="flex items-center justify-between">
         <div>
@@ -558,7 +558,7 @@ export default function MealPlanPage() {
         </div>
       </div>
 
-      <div className="grid gap-8 lg:grid-cols-4">
+      <div className="grid gap-8 pt-15 lg:grid-cols-4">
         {/* Meal Plans List */}
         <Card className="lg:col-span-1">
           <CardHeader>

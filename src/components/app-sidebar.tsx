@@ -52,12 +52,12 @@ const data = {
     },
     {
       title: "My Ingredients",
-      url: "/ingredients",
+      url: "/ai-recipe-generation",
       icon: ShoppingBasket,
     },
     {
       title: "Favorites",
-      url: "/favorites",
+      url: "/recipe-management",
       icon: Heart,
     },
     {
